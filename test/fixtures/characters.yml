@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  characters_type_id: 1
+  name: MyString
+  is_good_character: false
+
+two:
+  characters_type_id: 1
+  name: MyString
+  is_good_character: false
