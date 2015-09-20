@@ -11,6 +11,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 0) do
+ActiveRecord::Schema.define(version: 20150920122922) do
+
+  create_table "spells", force: :cascade do |t|
+    t.string   "name"
+    t.integer  "mana"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "weapons", force: :cascade do |t|
+    t.string   "name"
+    t.integer  "power"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
 end

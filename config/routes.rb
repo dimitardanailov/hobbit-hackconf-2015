@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  resources :weapons
+  resources :spells
+  get 'cms/index' # Please open CmsController and load method index
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

@@ -1,0 +1,2 @@
+module SpellsHelper
+end
