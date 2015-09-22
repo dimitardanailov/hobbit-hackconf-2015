@@ -1,5 +1,5 @@
 class Character < ActiveRecord::Base
-	belongs_to :character_type
+	belongs_to :character_type, :class_name => 'CharacterType'
 
 	# Type of character is require 
 	validates_presence_of :character_type_id

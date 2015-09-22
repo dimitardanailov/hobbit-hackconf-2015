@@ -2,7 +2,9 @@
 
 <p>
   <strong>Characters type:</strong>
-  <%= @character.characters_type_id %>
+  <% unless (@character.character_type.nil?) %>
+  	<%= @character.character_type.name %>
+  <% end %>
 </p>
 
 <p>

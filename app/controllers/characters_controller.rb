@@ -1,5 +1,6 @@
 class CharactersController < ApplicationController
   before_action :set_character, only: [:show, :edit, :update, :destroy]
+  before_action :prepare_form_data, only: [:new, :edit]
 
   # GET /characters
   # GET /characters.json
@@ -21,10 +22,6 @@ class CharactersController < ApplicationController
 
   # GET /characters/new
   def new
-    @character_types = CharacterType.all
-
-    puts YAML::dump @character_types
-
     @character = Character.new
   end
 
@@ -35,8 +32,6 @@ class CharactersController < ApplicationController
   # POST /characters
   # POST /characters.json
   def create
-    @character = Character.new(character_params)
-
     respond_to do |format|
       if @character.save
         format.html { redirect_to @character, notice: 'Character was successfully created.' }
@@ -80,6 +75,13 @@ class CharactersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def character_params
-      params.require(:character).permit(:characters_type_id, :name, :is_good_character)
+      params.require(:character).permit(:character_type_id, :name, :is_good_character)
+    end
+
+    # Get necessary information for _form view
+    def prepare_form_data
+      @character_types = CharacterType.all
+
+      puts YAML::dump @character_types
     end
 end
