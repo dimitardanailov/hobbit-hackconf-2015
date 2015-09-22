@@ -11,5 +11,4 @@ class Weapon < ActiveRecord::Base
 
 	# Power property should be between 1 and 100
 	validates :power, :numericality => { :greater_than => 0, :less_than_or_equal_to => 100 }
-
 end

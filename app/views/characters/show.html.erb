@@ -1,0 +1,21 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Characters type:</strong>
+  <% unless (@character.character_type.nil?) %>
+  	<%= @character.character_type.name %>
+  <% end %>
+</p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @character.name %>
+</p>
+
+<p>
+  <strong>Is good character:</strong>
+  <%= @character.is_good_character %>
+</p>
+
+<%= link_to 'Edit', edit_character_path(@character) %> |
+<%= link_to 'Back', characters_path %>

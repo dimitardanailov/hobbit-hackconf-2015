@@ -13,6 +13,23 @@
 
 ActiveRecord::Schema.define(version: 20150920122922) do
 
+  create_table "character_types", force: :cascade do |t|
+    t.string   "name",       limit: 100
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
+  end
+
+  create_table "characters", force: :cascade do |t|
+    t.integer  "character_types_id"
+    t.integer  "character_type_id"
+    t.string   "name"
+    t.boolean  "is_good_character"
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
+  end
+
+  add_index "characters", ["character_types_id"], name: "index_characters_on_character_types_id"
+
   create_table "spells", force: :cascade do |t|
     t.string   "name"
     t.integer  "mana"
@@ -21,10 +38,9 @@ ActiveRecord::Schema.define(version: 20150920122922) do
   end
 
   create_table "weapons", force: :cascade do |t|
-    t.string   "name"
+    t.string   "name",       limit: 100
     t.integer  "power"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
-
 end
