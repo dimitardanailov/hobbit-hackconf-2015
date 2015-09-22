@@ -8,6 +8,14 @@
 </head>
 <body>
 
+<% unless current_page?(root_url) %>
+	<nav>
+		<h3>
+			<%= link_to '<< Home Page', '/' %>
+		</h3>
+	</nav>
+<% end %>
+
 <%= yield %>
 
 </body>

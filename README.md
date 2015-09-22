@@ -8,7 +8,7 @@
 rails new [application_name] # Example: rails new hobbit-hackconf-2015
 ```
 
-> Пускане на стартиране на Webrick сървъра
+> Пускане на Webrick сървъра
 
 ```bash
 rails server # Shortcut rails s
@@ -97,4 +97,18 @@ rake db:rollback # Rollback Last Migration
 
 ```bash
 rake db:rollback STEP=10 # Rolback 10 previous migrations
+```
+
+## Debug variable 
+
+> In views:
+
+```ruby
+<%= debug(object) %>
+```
+
+> In controllers, models, and other code:
+
+```ruby
+puts YAML::dump {variable}
 ```

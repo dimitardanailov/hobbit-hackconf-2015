@@ -1,9 +1,11 @@
 Rails.application.routes.draw do
+  root 'cms#index' # This will be website entry point
   get 'cms/index' # Please open CmsController and load method index
   resources :weapons
   resources :spells
   resources :characters
   resources :character_types
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

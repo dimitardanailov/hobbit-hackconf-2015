@@ -32,6 +32,8 @@ class CharactersController < ApplicationController
   # POST /characters
   # POST /characters.json
   def create
+    @character = Character.new(character_params)
+    
     respond_to do |format|
       if @character.save
         format.html { redirect_to @character, notice: 'Character was successfully created.' }
